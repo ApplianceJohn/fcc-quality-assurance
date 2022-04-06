@@ -14,8 +14,8 @@ suite("Functional Tests", function () {
 			chai.request(server)
 				.get("/hello")
 				.end(function (err, res) {
-					assert.fail(res.status, 200);
-					assert.fail(res.text, "hello Guest");
+					assert.equal(res.status, 200);
+					assert.equal(res.text, "hello Guest");
 					done();
 				});
 		});
@@ -24,8 +24,8 @@ suite("Functional Tests", function () {
 			chai.request(server)
 				.get("/hello?name=xy_z")
 				.end(function (err, res) {
-					assert.fail(res.status, 200);
-					assert.fail(res.text, "hello xy_z");
+					assert.equal(res.status, 200);
+					assert.equal(res.text, "hello xy_z");
 					done();
 				});
 		});
